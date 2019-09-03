@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development"
+    "dev": "webpack-dev-server --mode development"
   },
   "author": "Gabriel Dantas <gabriel.dantas@pmm.am.gov.br>",
   "license": "MIT",
@@ -17,6 +17,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.7"
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
   }
 }
