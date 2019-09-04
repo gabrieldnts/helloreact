@@ -3,9 +3,7 @@ import PropTypes from "prop-types";
 
 // Sintaxe utilizada para Stateless Component
 const Button = props => (
-  <button onClick={props.onClick} href="">
-    {props.children}
-  </button>
+  <button onClick={props.onClick}>{props.children}</button>
 );
 
 Button.defaultProps = {
