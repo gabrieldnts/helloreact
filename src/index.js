@@ -1,29 +1,9 @@
 //Importando biblioteca react e react-dom
 import React, { Component, Fragment } from "react";
 import { render } from "react-dom";
-//Importando biblioteca PropTypes
-import PropTypes from "prop-types";
 
-class Button extends Component {
-  //Props default para quando o button não tiver valores atribuidos
-  static defaultProps = {
-    children: "-"
-  };
-  //Props default para quando o button não tiver funções atribuidas
-  static propTypes = {
-    onClick: PropTypes.func.isRequired,
-    children: PropTypes.string
-  };
-  //único método obrigatório de um Component
-  render() {
-    return (
-      //passando os valores para o componet gerados no App Component
-      <button onClick={this.props.onClick} href="">
-        {this.props.children}
-      </button>
-    );
-  }
-}
+//Importando Components de outro arquivo
+import Button from "./Button";
 
 //Classe padrão para a exibição do conteúdo
 class App extends Component {
