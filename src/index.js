@@ -11,6 +11,16 @@ class App extends Component {
     counter: 0
   };
 
+  componentDidMount() {}
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextState.counter <= 10 && nextState.counter >= -10;
+  }
+  componentDidUpdate(prevProps, prevState) {
+    return alert("Adicionado ao carrinho!");
+  }
+
+  componentWillAmount() {}
+
   handleClick = () => {
     this.setState({ counter: this.state.counter + 1 });
   };
