@@ -5,6 +5,16 @@ import { render } from "react-dom";
 import PropTypes from "prop-types";
 
 class Button extends Component {
+  //Props default para quando o button não tiver valores atribuidos
+  static defaultProps = {
+    children: "Salvar"
+  };
+  //Props default para quando o button não tiver funções atribuidas
+
+  static propTypes = {
+    onClick: PropTypes.func.isRequired,
+    children: PropTypes.string
+  };
   //único método obrigatório de um Component
   render() {
     return (
@@ -15,13 +25,6 @@ class Button extends Component {
     );
   }
 }
-Button.defaultProps = {
-  children: "Salvar"
-};
-Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  children: PropTypes.string
-};
 
 class Input extends Component {
   render() {
