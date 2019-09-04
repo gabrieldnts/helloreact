@@ -11,14 +11,18 @@ class App extends Component {
     counter: 0
   };
 
+  //Método executado na inicialização do component
   componentDidMount() {}
+
+  //Verificação antes do render ser executado novamente
   shouldComponentUpdate(nextProps, nextState) {
     return nextState.counter <= 10 && nextState.counter >= -10;
   }
+  //Verificação após a execução do render
   componentDidUpdate(prevProps, prevState) {
     return alert("Adicionado ao carrinho!");
   }
-
+  //Método executado após o fim do component na aplicação
   componentWillAmount() {}
 
   handleClick = () => {
