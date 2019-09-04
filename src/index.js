@@ -1,17 +1,28 @@
 //Importando biblioteca react e react-dom
 import React, { Component, Fragment } from "react";
 import { render } from "react-dom";
+//Importando biblioteca PropTypes
+import PropTypes from "prop-types";
 
 class Button extends Component {
   //único método obrigatório de um Component
   render() {
     return (
+      //passando os valores para o componet gerados no App Component
       <a onClick={this.props.onClick} href="">
-        Google
+        {this.props.children}
       </a>
     );
   }
 }
+Button.defaultProps = {
+  children: "Salvar"
+};
+Button.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  children: PropTypes.string
+};
+
 class Input extends Component {
   render() {
     return <input placeholder="Pesquise aqui"></input>;
@@ -28,7 +39,13 @@ class App extends Component {
       //Para chamar mais de um component dentro de outro, é necessário coloca-los dentro de uma Div ou usar Fragment Component
       <Fragment>
         <h1>Hello React</h1>
-        <Button onClick={this.handleClick}></Button>
+        <Button onClick={this.handleClick}>Doodle</Button>
+        <Button
+          onClick={() => {
+            alert("Salvo!");
+          }}
+        />
+
         <Input />
       </Fragment>
     );
